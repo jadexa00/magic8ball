@@ -1,24 +1,22 @@
  require "colorize"
 
-class Magic_eight_ball
+class RPS
   def initialize
-     @arr = ["Yes",
-    "No",
-    "I think so",
-    "Probably not",
-    "Probably"
+     @arr = ["ROCK",
+    "PAPER",
+    "SCISSORS"
 ]
     @answer_arr = @arr.clone
-     puts "Welcome to MAGIC 8 BALL".colorize(:yellow)
+     puts "ROCK PAPER SCISSORS".colorize(:orange)
     menu
   end
   def menu
-    puts "1) TYPE 1 TO ASK THE MAGIC8BALL A QUESTION".colorize(:magenta)
+    puts "1) TYPE 1 TO ENTER THE GAME".colorize(:orange)
     puts "2) EXIT.".colorize(:red)
     choice = gets.to_i
     case choice
       when 1
-        puts "ASK ME ANY QUESTION".colorize(:magenta)
+        puts "ROCK PAPER OR SCISSORS".colorize(:magenta)
         choice2 = gets.strip
         choice2 == "Change" ? answer_options : answer
         menu
@@ -39,5 +37,5 @@ class Magic_eight_ball
     answer_options
   end
 end
-magic_eight_ball = Magic_eight_ball.new
 
+RPS = RPS.new
