@@ -1,30 +1,34 @@
- require "colorize"
-
-class RPS
+require "colorize"
+class MagicEightBall
   def initialize
-     @arr = ["ROCK",
-    "PAPER",
-    "SCISSORS"
+     @arr = ["Yes",
+    "No",
+    "I think so",
+    "Probably not",
+  "Probably",
+  "Honestly, just try again",
+  "I don't know you tell me",
+  "Sure",
 ]
     @answer_arr = @arr.clone
-     puts "ROCK PAPER SCISSORS".colorize(:orange)
+     puts "Welcome to MAGIC 8 BALL".colorize(:yellow)
     menu
   end
   def menu
-    puts "1) TYPE 1 TO ENTER THE GAME".colorize(:orange)
+    puts "1) TYPE 1 TO ASK THE MAGIC8BALL A QUESTION".colorize(:magenta)
     puts "2) EXIT.".colorize(:red)
     choice = gets.to_i
     case choice
       when 1
-        puts "ROCK PAPER OR SCISSORS".colorize(:magenta)
+        puts "TYPE A QUESTION".colorize(:magenta)
         choice2 = gets.strip
         choice2 == "Change" ? answer_options : answer
         menu
       when 2
-        puts "GOODBYE".colorize(:red)
+        puts "GOODBYE, FEEL FREE TO PLAY AGAIN".colorize(:red)
         exit
       else
-        puts "TRY AGAIN".colorize(:red)
+        puts "FALSE INPUT, TRY AGAIN.".colorize(:red)
         menu    
     end
   end
@@ -37,5 +41,4 @@ class RPS
     answer_options
   end
 end
-
-RPS = RPS.new
+MagicEightBall = MagicEightBall.new
